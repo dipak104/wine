@@ -23,7 +23,7 @@ def predict(data):
     print(prediction)
     return prediction[0]
 
-def api_response(request):
+def api_response(data):
     try:
         data = np.array([list(request.json.values())])
         response = predict(data)
