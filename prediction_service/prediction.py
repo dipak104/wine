@@ -51,15 +51,19 @@ def validate_input(dict_request):
             raise NotInRange
 
     for col, val in dict_request.items():
-        _validate_cols(cols)
+        _validate_cols(col)
         _validate_values(col, val)
     return True
 
 def form_response(dict_request):
-    if validate_input(dict_request):
-        data = dict_request.values()
-        data = [list(map(float, data))]
-        response = predict(data)
+    try:
+        if validate_input(dict_request):
+            data = dict_request.values()
+            data = [list(map(float, data))]
+            response = predict(data)
+            return response
+    except Exception as e:
+        response = {"The_expected_range": get_schema(), "response": str(e)}
         return response
 
 def api_response(dict_request):
