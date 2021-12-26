@@ -1,6 +1,6 @@
 dvc
 dvc[gdrive]
-sklearn
+scikit-learn==0.24
 pandas
 pytest
 tox
