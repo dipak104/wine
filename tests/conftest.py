@@ -2,12 +2,11 @@ import pytest
 import yaml
 import os
 import json
-
+from src.get_data import read_params
 
 @pytest.fixture
 def config(config_path="params.yaml"):
-    with open(config_path) as yaml_file:
-        config = yaml.safe_load(yaml_file)
+    config = read_params(config_path)
     return config
 
 @pytest.fixture
