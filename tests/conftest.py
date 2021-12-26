@@ -1,5 +1,4 @@
 import pytest
-import yaml
 import os
 import json
 from src.get_data import read_params
