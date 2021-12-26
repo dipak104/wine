@@ -56,15 +56,12 @@ def validate_input(dict_request):
     return True
 
 def form_response(dict_request):
-    try:
-        if validate_input(dict_request):
-            data = dict_request.values()
-            data = [list(map(float, data))]
-            response = predict(data)
-            return response
-    except Exception as e:
-        response = {"The_expected_range": get_schema(), "response": str(e)}
+    if validate_input(dict_request):
+        data = dict_request.values()
+        data = [list(map(float, data))]
+        response = predict(data)
         return response
+
 
 def api_response(dict_request):
     try:
