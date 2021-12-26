@@ -5,7 +5,7 @@ import yaml
 #from src.get_data import read_params
 
 @pytest.fixture
-def config(config_path="params.yaml"):
+def config(config_path=os.path.join("wine","params.yaml")):
     with open(config_path) as yaml_file:
         config = yaml.safe_load(yaml_file)
     return config
