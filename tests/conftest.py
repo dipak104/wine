@@ -3,7 +3,6 @@ import yaml
 import os
 import json
 
-##from src.get_data import read_params
 
 @pytest.fixture
 def config(config_path="params.yaml"):
